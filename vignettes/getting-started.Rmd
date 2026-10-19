@@ -1,0 +1,98 @@
+---
+title: "Getting Started with chatcache"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Getting Started with chatcache}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(chatcache)
+```
+
+# Introduction
+
+`chatcache` provides a persistent cache for LLM interactions when using the
+[ellmer](https://github.com/tidyverse/ellmer) and
+[shinychat](https://github.com/posit-dev/shinychat) packages. It stores
+user prompts and model responses in a local SQLite database so repeated
+queries do not hit the API again.
+
+# Basic usage
+
+```{r eval=FALSE}
+library(ellmer)
+library(chatcache)
+
+# Initialize (optional — happens automatically)
+chatcache_init()
+
+chat <- chat_openai(system_prompt = "Be concise.")
+
+# First call goes to the API and is cached
+answer <- cached_chat(chat, "What is the capital of France?")
+
+# Second call returns instantly from cache
+answer <- cached_chat(chat, "What is the capital of France?")
+
+# See what is cached
+chatcache_list()
+```
+
+# Using with shinychat
+
+```{r eval=FALSE}
+library(shiny)
+library(shinychat)
+library(ellmer)
+library(chatcache)
+
+ui <- bslib::page_fluid(
+  chat_ui("chat")
+)
+
+server <- function(input, output, session) {
+  chat <- chat_openai(system_prompt = "You are a helpful assistant.")
+
+  observeEvent(input$chat_user_input, {
+    cached_shinychat_respond(chat, input$chat_user_input, "chat")
+  })
+}
+
+shinyApp(ui, server)
+```
+
+# Cache management
+
+```{r eval=FALSE}
+# List recent entries
+chatcache_list(limit = 20)
+
+# Clear everything (interactive confirmation)
+chatcache_clear()
+
+# Or force clear
+chatcache_clear(confirm = FALSE)
+```
+
+# Cache location
+
+By default the database lives in the user cache directory:
+
+```{r eval=FALSE}
+tools::R_user_dir("chatcache", which = "cache")
+```
+
+You can override it:
+
+```{r eval=FALSE}
+chatcache_init(cache_dir = "path/to/my/cache")
+```

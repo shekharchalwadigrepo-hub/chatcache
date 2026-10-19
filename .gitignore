@@ -1,0 +1,23 @@
+# R
+.Rhistory
+.RData
+.Ruserdata
+.Rproj.user/
+
+# Package build
+*.tar.gz
+*.Rcheck/
+docs/
+Meta/
+doc/
+
+# Tests
+tests/testthat/Rplots.pdf
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
