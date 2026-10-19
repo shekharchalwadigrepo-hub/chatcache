@@ -29,4 +29,5 @@ library(ellmer)
 chat <- chat_openai(system_prompt = "Be concise.")
 answer <- cached_chat(chat, "What is the capital of France?")
 }
+
 }
