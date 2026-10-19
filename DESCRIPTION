@@ -1,6 +1,6 @@
 Package: chatcache
 Type: Package
-Title: Persistent Cache for ellmer and shinychat LLM Interactions
+Title: Persistent Cache for Ellmer and Shinychat LLM Interactions
 Version: 0.1.0
 Authors@R: c(
     person("Shekhar", email = "skrchalwadicg@gmail.com", role = c("aut", "cre"))
