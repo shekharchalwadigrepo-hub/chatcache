@@ -13,7 +13,6 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 Depends: R (>= 4.1.0)
 Imports: 
-    ellmer,
     digest,
     jsonlite,
     DBI,
@@ -21,6 +20,7 @@ Imports:
     cli,
     rlang (>= 1.1.0)
 Suggests: 
+    ellmer,
     shiny,
     shinychat,
     testthat (>= 3.0.0),
