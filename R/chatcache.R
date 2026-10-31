@@ -1,8 +1,8 @@
-#' chatcache: Persistent Cache for ellmer and shinychat
+#' chatcache: Persistent Cache for 'ellmer' and 'shinychat'
 #'
 #' Provides a persistent SQLite-based cache for user prompts and corresponding
-#' LLM responses. Designed for applications built with the \pkg{ellmer} and
-#' \pkg{shinychat} packages.
+#' large language model (LLM) responses. Designed for applications built with
+#' the \pkg{ellmer} and \pkg{shinychat} packages.
 #'
 #' @keywords internal
 "_PACKAGE"

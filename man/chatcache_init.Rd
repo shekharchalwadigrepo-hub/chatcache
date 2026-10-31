@@ -21,5 +21,4 @@ Creates or connects to the SQLite database used to store prompts and responses.
 chatcache_init()
 chatcache_init(cache_dir = tempdir())
 }
-
 }

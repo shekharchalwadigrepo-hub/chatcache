@@ -2,14 +2,14 @@ citHeader("To cite chatcache in publications use:")
 
 bibentry(
   bibtype = "Manual",
-  title = "chatcache: Persistent Cache for Ellmer and Shinychat LLM Interactions",
-  author = person("Shekhar", email = "skrchalwadicg@gmail.com"),
+  title = "chatcache: Persistent Cache for 'ellmer' and 'shinychat' Large Language Model Interactions",
+  author = person("Shekhar", "Chalwadi", email = "skrchalwadicg@gmail.com"),
   year = "2026",
   note = "R package version 0.1.0",
   url = "https://github.com/shekharchalwadigrepo-hub/chatcache",
   textVersion = paste(
-    "Shekhar (2026).",
-    "chatcache: Persistent Cache for Ellmer and Shinychat LLM Interactions.",
+    "Shekhar Chalwadi (2026).",
+    "chatcache: Persistent Cache for 'ellmer' and 'shinychat' Large Language Model Interactions.",
     "R package version 0.1.0.",
     "https://github.com/shekharchalwadigrepo-hub/chatcache"
   )

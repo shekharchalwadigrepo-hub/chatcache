@@ -1,14 +1,15 @@
 Package: chatcache
 Type: Package
-Title: Persistent Cache for Ellmer and Shinychat LLM Interactions
+Title: Persistent Cache for 'ellmer' and 'shinychat' Large Language Model Interactions
 Version: 0.1.0
 Authors@R: c(
-    person("Shekhar", email = "skrchalwadicg@gmail.com", role = c("aut", "cre"))
+    person("Shekhar", "Chalwadi", email = "skrchalwadicg@gmail.com", role = c("aut", "cre"))
   )
-Description: Provides a persistent SQLite-based cache for user prompts and LLM
-    responses in applications built with the 'ellmer' and 'shinychat' packages.
-    Reduces API costs and latency by storing and retrieving identical or similar
-    chat interactions across sessions and users.
+Description: Provides a persistent SQLite-based cache for user prompts and
+    large language model (LLM) responses in applications built with the
+    'ellmer' and 'shinychat' packages. Reduces API (application programming
+    interface) costs and latency by storing and retrieving identical or
+    similar chat interactions across sessions and users.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Depends: R (>= 4.1.0)
